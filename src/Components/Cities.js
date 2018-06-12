@@ -12,7 +12,7 @@ class Cities extends Component {
   }
 
   fetchWeather = () => {
-    fetch('https://api.openweathermap.org/data/2.5/group?id=5128581,5391959,5368361,4887398,5809844&APPID=0a514753e7884428ac7964736fbbb643')
+    fetch('https://api.openweathermap.org/data/2.5/group?id=5128581,5391959,5368361,4887398,5809844&units=imperial&APPID=0a514753e7884428ac7964736fbbb643')
     .then( res => res.json())
     .then( json => {
       console.log(json)

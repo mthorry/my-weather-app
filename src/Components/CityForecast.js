@@ -37,16 +37,18 @@ class CityForecast extends Component {
       return `${time-12} pm`
     } else if (time === 0) {
       return "12 am"
-    }else {
+    }else if (time === 12) {
+      return "12 pm"
+    } else {
       return `${time} am`
     }
   }
 
   renderForecastItem = () => {
-    if (this.state.forecast.length){
-        return this.state.forecast.map( f => {
-          console.log(f)
-          return <CityForecastItem forecasts={f} timeModifier={this.timeModifier}/> 
+    const {forecast} = this.state
+    if (forecast.length){
+        return forecast.map( f => {
+          return <CityForecastItem key={forecast.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/> 
         })
       }
     }

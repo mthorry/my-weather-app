@@ -41,6 +41,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .forecast-item {

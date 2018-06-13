@@ -36,3 +36,13 @@
 .City {
   padding: 15px;
 }
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.forecast-item {
+  padding: 25px;
+}

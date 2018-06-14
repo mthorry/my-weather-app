@@ -50,14 +50,25 @@ class App extends Component {
   }
 
   renderCitiesContainer = () => {
-  	return <CitiesContainer handleErrors={this.handleErrors} handleCitySearch={this.handleCitySearch} cities={this.state.cities} loading={this.state.loading}/>
+  	return <CitiesContainer 
+  		handleErrors={this.handleErrors} 
+  		handleCitySearch={this.handleCitySearch} 
+  		cities={this.state.cities} 
+  		loading={this.state.loading}
+  		/>
   }
 
   render() {
     return (
       <div className="App">
-        <Route exact path='/home' render={this.renderCitiesContainer} />
-        <Route exact path='/forecast/:id' component={CityForecastsContainer} />
+        <Route 
+        exact path='/home' 
+        render={this.renderCitiesContainer} 
+        />
+        <Route 
+        exact path='/forecast/:id' 
+        render={(props) => <CityForecastsContainer {...props} cities={this.state.cities} /> } 
+        />
       </div>
     );
   }

@@ -31,3 +31,15 @@
 .forecast-item {
   padding: 0px 25px 10px;
 }
+
+.forecast-header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.forecast-titles {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}

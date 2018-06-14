@@ -4,72 +4,30 @@ import CityWeatherItem from './CityWeatherItem'
 class CitiesContainer extends Component {
 
   state = {
-    cities: [],
-    loading: true,
     searchValue: ''
   }
 
-  componentDidMount = () => {
-    this.fetchWeather()
-  }
-
-  fetchWeather = () => {
-    fetch('https://api.openweathermap.org/data/2.5/group?id=5128581,5391959,5368361,4887398,5809844&units=imperial&APPID=0a514753e7884428ac7964736fbbb643')
-    .then( res => res.json())
-    .then( json => {
-      this.setState({
-        cities: json.list,
-        loading: false
-      })
-    })
-  }
-
   renderCityWeatherItems = () => {
-    return this.state.cities.map( city => <CityWeatherItem city={city} key={city.id} /> )
+    return this.props.cities.map( city => <CityWeatherItem city={city} key={city.id} /> )
   }
 
   handleChange = (e) => {
-    this.setState({searchValue: e.target.value});
+    this.setState({ searchValue: e.target.value });
   }
 
-  handleErrors = res => {
-    if (!res.ok) {
-      throw Error(res.statusText);
-    }
-    return res;
-  }
-
-  handleCitySearch = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
-    let formattedSearchValue = this.state.searchValue.split(" ").join("+")
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${formattedSearchValue}&APPID=0a514753e7884428ac7964736fbbb643`)
-    .then( res => this.handleErrors(res))
-    .then( res => res.json())
-    .then( json => {
-      this.setState({
-        cities: [...this.state.cities, json],
-        loading: false,
-        searchValue: ''
-      })
-    })
-    .catch( err => {
-        alert(err);
-    });
+    this.props.handleCitySearch(this.state.searchValue)
+    this.setState({ searchValue: '' })
   }
 
   render() {
     return (
       <div className="CitiesContainer">
         <h1>Current Weather</h1>
-        <div className='cities-container'>
-        { this.state.loading ? <div>FETCHING DATA</div> : null }
-        { this.renderCityWeatherItems() }
-        </div>
-        <br/>
         <div className='search'>
-
-            { this.state.loading ? null : <form
-              onSubmit={this.handleCitySearch}
+            { this.props.loading ? null : <form
+              onSubmit={this.handleSubmit}
               >
               <input
               type="text"
@@ -83,8 +41,12 @@ class CitiesContainer extends Component {
               value="Add City"
               />
               </form> }
-
         </div>
+        <div className='cities-container'>
+        { this.props.loading ? <div>FETCHING DATA</div> : null }
+        { this.renderCityWeatherItems() }
+        </div>
+        <br/>
       </div>
     );
   }

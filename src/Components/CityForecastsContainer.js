@@ -5,7 +5,7 @@ import CityForecastItem from './CityForecastItem'
 class CityForecastsContainer extends Component {
 
   state = {
-    forecast: [],
+    forecasts: [],
     city: '',
     loading: true
   }
@@ -27,7 +27,7 @@ class CityForecastsContainer extends Component {
       arr.push(json.list.filter( forecast => (new Date(`${forecast.dt_txt}`).getDate()) === today+4))
       arr.push(json.list.filter( forecast => (new Date(`${forecast.dt_txt}`).getDate()) === today+5))
       this.setState({
-        forecast: arr,
+        forecasts: arr,
         city: json.city,
         loading: false
       })
@@ -47,22 +47,29 @@ class CityForecastsContainer extends Component {
   }
 
   renderForecastItem = () => {
-    const {forecast} = this.state
-    if (forecast.length){
-        return forecast.map( f => {
-          return <CityForecastItem key={forecast.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/>
+    const {forecasts} = this.state
+    if (forecasts.length){
+        return forecasts.map( f => {
+          return <CityForecastItem key={forecasts.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/>
         })
       }
     }
 
   render() {
     const { city, loading } = this.state
+    const style = {
+      border: '0',
+      height: '75vh',
+      width: "75vw"
+    }
 
     return (
       <div className="CityForecastsContainer">
         <h2>{city.name} 5 Day Forecast </h2>
         <br/>
       { loading ? <div>LOADING</div> : <div>
+        <h3>Current Radar</h3>
+        <iframe src={`https://www.rainviewer.com/map.html?loc=${city.coord.lat},${city.coord.lon},6&oFa=0&oC=0&oU=0&oCUB=1&oCS=1&oF=0&oAP=0&rmt=4`}  frameborder="0" style={style} allowfullscreen></iframe><br/>
         <Link to='/home'>Back</Link>
         <div className='forecast-container'>
           {this.state.city.name ? this.renderForecastItem() : null}

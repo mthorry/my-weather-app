@@ -37,9 +37,3 @@
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-
-.forecast-titles {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}

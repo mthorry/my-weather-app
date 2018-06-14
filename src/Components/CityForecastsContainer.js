@@ -71,12 +71,9 @@ class CityForecastsContainer extends Component {
 
     return (
       <div className="CityForecastsContainer">
-        <h2>{city.name} 5 Day Forecast </h2>
+        <h2>{city.name} Weather </h2>
         <br/>
       { loading ? <div>LOADING</div> : <div>
-        <div className='forecast-titles'>
-        <h3>Current Radar</h3><h3>Current Weather</h3>
-        </div>
         <div className='forecast-header'>
         <iframe src={`https://www.rainviewer.com/map.html?loc=${city.coord.lat},${city.coord.lon},7&oFa=0&oC=0&oU=0&oCUB=1&oCS=1&oF=0&oAP=0&rmt=4`}  frameborder="0" style={style} allowfullscreen></iframe>
         <CityWeatherItem city={city} />

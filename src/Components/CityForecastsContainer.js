@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import CityForecastItem from './CityForecastItem'
 
-class CityForecast extends Component {
+class CityForecastsContainer extends Component {
 
   state = {
     forecast: [],
-    city: ''
+    city: '',
+    loading: true
   }
 
   componentDidMount = () => {
@@ -27,7 +28,8 @@ class CityForecast extends Component {
       arr.push(json.list.filter( forecast => (new Date(`${forecast.dt_txt}`).getDate()) === today+5))
       this.setState({
         forecast: arr,
-        city: json.city
+        city: json.city,
+        loading: false
       })
     })
   }
@@ -48,25 +50,26 @@ class CityForecast extends Component {
     const {forecast} = this.state
     if (forecast.length){
         return forecast.map( f => {
-          return <CityForecastItem key={forecast.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/> 
+          return <CityForecastItem key={forecast.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/>
         })
       }
     }
 
   render() {
-    const { city } = this.state
+    const { city, loading } = this.state
 
     return (
-      <div className="CityForecast">
-        <h2> 5 Day Forecast for {city.name}</h2>
+      <div className="CityForecastsContainer">
+        <h2>{city.name} 5 Day Forecast </h2>
         <br/>
+      { loading ? <div>LOADING</div> : <div>
         <Link to='/home'>Back</Link>
         <div className='forecast-container'>
           {this.state.city.name ? this.renderForecastItem() : null}
-        </div>
+        </div></div> }
       </div>
     );
   }
 }
 
-export default CityForecast;
+export default CityForecastsContainer;

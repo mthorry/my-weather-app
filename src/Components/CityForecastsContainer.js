@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import CityForecastItem from './CityForecastItem'
-import CityWeatherItem from './CityWeatherItem'
+import CityForecastWeatherItem from './CityForecastWeatherItem'
 
 class CityForecastsContainer extends Component {
 
@@ -53,6 +53,7 @@ class CityForecastsContainer extends Component {
 
   renderForecastItem = () => {
     const {forecasts} = this.state
+    console.log(forecasts)
     if (forecasts.length){
         return forecasts.map( f => {
           return <CityForecastItem key={forecasts.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/>
@@ -66,7 +67,7 @@ class CityForecastsContainer extends Component {
     const style = {
       border: '0',
       height: '75vh',
-      width: "75vw"
+      width: "65vw"
     }
 
     return (
@@ -75,8 +76,8 @@ class CityForecastsContainer extends Component {
         <br/>
       { loading ? <div>LOADING</div> : <div>
         <div className='forecast-header'>
-        <iframe src={`https://www.rainviewer.com/map.html?loc=${city.coord.lat},${city.coord.lon},7&oFa=0&oC=0&oU=0&oCUB=1&oCS=1&oF=0&oAP=0&rmt=4`}  frameborder="0" style={style} allowfullscreen></iframe>
-        <CityWeatherItem city={city} />
+        <iframe src={`https://www.rainviewer.com/map.html?loc=${city.coord.lat},${city.coord.lon},7&oFa=0&oC=0&oU=0&oCUB=1&oCS=1&oF=0&oAP=0&rmt=4`}  frameBorder="0" style={style} allowFullScreen></iframe>
+        <CityForecastWeatherItem city={city} />
         </div>
         <br/>
         <Link to='/home'>Back</Link>

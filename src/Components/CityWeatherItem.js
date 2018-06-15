@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const CityWeatherItem = ({city}) => {
+  console.log(city)
   return (
     <div className="CityWeatherItem">
       <h3>{(city.name).toUpperCase()}</h3>
@@ -10,8 +11,7 @@ const CityWeatherItem = ({city}) => {
       <p><strong>Currently:</strong> {city.weather[0].description}</p>
       <p><strong>High:</strong> {Math.round(city.main.temp_max)}˚F</p>
       <p><strong>Low:</strong> {Math.round(city.main.temp_min)}˚F</p>
-      <p><strong>Wind:</strong> {Math.round(city.wind.speed)} mph</p>
-      <Link to={`/forecast/${city.id}`}>5 Day Forecast</Link>
+      <Link to={`/forecast/${city.id}`}>Detailed Forecast</Link>
     </div>
   );
 }

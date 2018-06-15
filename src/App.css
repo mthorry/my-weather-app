@@ -30,10 +30,17 @@
 
 .forecast-item {
   padding: 0px 25px 10px;
+  width: 150px;
 }
 
 .forecast-header {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+}
+
+.CityForecastWeatherItem {
+  margin-left: 5%;
+  margin-right: 5%;
 }

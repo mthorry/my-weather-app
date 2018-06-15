@@ -9,6 +9,7 @@ const CityForecastItem = ({forecasts, timeModifier}) => {
 				<h3>{timeModifier(time)}</h3>
 				<p>{Math.round(forecast.main.temp)}˚F and {forecast.weather[0].main}</p>
         		<p>{forecast.weather[0].description}</p>
+      			{ forecast.rain ? (forecast.rain['3h'] ? <p>{(forecast.rain['3h']).toFixed(2)} mm rain</p> : null ) : null }
         		<img src={`http://openweathermap.org/img/w/${forecast.weather[0].icon}.png`} alt={forecast.weather[0].description} />
       </div>
 		})

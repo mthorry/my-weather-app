@@ -47,6 +47,7 @@ class CitiesContainer extends Component {
         { this.renderCityWeatherItems() }
         </div>
         <br/>
+
       </div>
     );
   }

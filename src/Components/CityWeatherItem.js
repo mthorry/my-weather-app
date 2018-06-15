@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const CityWeatherItem = ({city}) => {
-  console.log(city)
   return (
     <div className="CityWeatherItem">
       <h3>{(city.name).toUpperCase()}</h3>

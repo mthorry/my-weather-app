@@ -53,7 +53,6 @@ class CityForecastsContainer extends Component {
 
   renderForecastItem = () => {
     const {forecasts} = this.state
-    console.log(forecasts)
     if (forecasts.length){
         return forecasts.map( f => {
           return <CityForecastItem key={forecasts.indexOf(f)} forecasts={f} timeModifier={this.timeModifier}/>
@@ -63,7 +62,6 @@ class CityForecastsContainer extends Component {
 
   render() {
     const { city, loading } = this.state
-      console.log(city)
     const style = {
       border: '0',
       height: '75vh',

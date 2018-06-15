@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const CityForecastWeatherItem = ({city}) => {
-  console.log(city)
   return (
     <div className="CityForecastWeatherItem">
       <h3>{Math.round(city.main.temp)}˚F & {city.weather[0].main}</h3>

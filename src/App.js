@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import './App.css';
 import CitiesContainer from './Components/CitiesContainer'
 import CityForecastsContainer from './Components/CityForecastsContainer'
+import Footer from './Components/Footer'
 
 class App extends Component {
 
@@ -68,6 +69,10 @@ class App extends Component {
         <Route
         exact path='/forecast/:id'
         render={(props) => <CityForecastsContainer {...props} cities={this.state.cities} /> }
+        />
+        <Route
+        path="/"
+        component={Footer}
         />
       </div>
     );

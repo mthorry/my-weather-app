@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 200px;
 }
 
 html {
@@ -165,4 +168,36 @@ html {
 
 .clouds {
   color: #BCBABE
+}
+
+.Footer {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0 ;
+  right: 0;
+  width: 100%;
+  background: #1995AD;
+  color: white;
+}
+
+.Footer a {
+  text-decoration: none;
+  color: #383739;
+  transition: .4s ease;
+  font-weight: bold;
+}
+
+
+.Footer a:hover {
+  color: #FFF;
+}
+
+.footer-column {
+  padding: 10px;
+  width: 400px;
+  text-align: center;
 }

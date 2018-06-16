@@ -19,10 +19,6 @@ const CityForecastItem = ({forecasts, timeModifier}) => {
 		})
 	}
 
-	const renderHourlyGraphs = () => {
-
-	}
-
 	let forecastDate
 	forecasts.length ? forecastDate = new Date(forecasts[0].dt_txt) : null
 
@@ -44,7 +40,7 @@ const CityForecastItem = ({forecasts, timeModifier}) => {
 		        <YAxis
 		        	yAxisId="right"
 		        	orientation="right"
-		        	domain={[1000, 1040]}
+		        	domain={[990, 1030]}
 		        	label={{ value: 'pressure (millibars)', angle: 90, position: 'insideBottomRight' }}
 		        />
 				<Tooltip content={<CustomTooltip/>} />

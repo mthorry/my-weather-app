@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Footer extends React.Component{
 
@@ -7,14 +7,14 @@ class Footer extends React.Component{
     return(
     <div className="Footer">
       <div className="footer-column">
-        <h3 >My Lineup App</h3>
+        <h3 >Weather Visualizer</h3>
         <p>Made with ❤️ by <strong>Matt Thorry</strong>, 2018 with JavaScript, CSS, HTML & React.</p>
+          <Link to='/'>Home</Link>
       </div>
       <div className="footer-column">
         <h3>GitHub Repos</h3>
         <div >
           <a href="https://github.com/mthorry/my-weather-app" className="item" target="_blank">This Project Repo</a><br/>
-          {' '}<br/>
           <a href="https://github.com/mthorry" className="item" target="_blank">My GitHub</a><br/>
         </div>
       </div>

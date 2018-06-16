@@ -78,7 +78,7 @@ class CityForecastsContainer extends Component {
         <CityForecastWeatherItem city={city} />
         </div>
         <br/>
-        <Link to='/home'>Back</Link>
+        <Link to='/'>Back</Link>
         <h1 style={{'padding-top': '15px'}}>5 Day Forecast</h1>
         <p>(Scroll through hourly forecast + hover over graph to see details)</p>
           {this.state.city.name ? this.renderForecastItem() : null}

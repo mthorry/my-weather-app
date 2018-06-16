@@ -5,6 +5,18 @@
   padding-bottom: 200px;
 }
 
+@media screen and (max-width: 600px) {
+  .App {
+    padding-bottom: 3500px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .App {
+    padding-bottom: 500px;
+  }
+}
+
 html {
   color: #383739;
   background: linear-gradient(to right, #ecf6f9, #f5fafc);

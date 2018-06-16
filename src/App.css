@@ -2,10 +2,40 @@
   text-align: center;
 }
 
+html {
+  color: #383739;
+  background: linear-gradient(to right, #ecf6f9, #f5fafc);
+}
+
 .cities-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.cities-container a {
+  text-decoration: none;
+}
+
+.textbox {
+  padding: 10px;
+  width: 300px;
+  border-radius: 4px;
+  margin: 0px 10px 15px 0px;
+}
+
+.button {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  width: 150px;
+  border-radius: 4px;
+  background-color: #A1D6E2;
+  color: #383739;
+  transition: .4s ease;
+}
+
+.button:hover {
+  background-color: #F1F1F2;
 }
 
 .City {
@@ -17,20 +47,70 @@
 }
 
 .CityWeatherItem {
-  margin: 10px 25px;
+  min-width: 200px;
+  padding: 5px 10px;
+  margin: 5px 15px;
+  background-color: #A1D6E2;
+  color: #383739;
+  transition: .4s ease;
+}
+
+.CityWeatherItem:hover {
+  background-color: #1995AD;
+  color: #F1F1F2;
+}
+
+.CityForecastsContainer a {
+  text-decoration: none;
+  color: #383739;
+  transition: .4s ease;
+}
+
+.CityForecastsContainer a:hover {
+  color: #1995AD;
+}
+
+.carousel-container {
+  display:block;
+  overflow:hidden;
+  margin: 0px 50px 15px 50px;
 }
 
 .forecast-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-left: 50px;
-  margin-right: 50px;
+  display:block;
+  width: 100%;
+  background: #FCFCFC;
+  overflow-x: scroll;
+  padding: 15px;
+  white-space: nowrap;
+  border-top: 2px solid #1995AD;
 }
 
 .forecast-item {
-  padding: 0px 25px 10px;
+  /*padding: 0px 25px 10px;
+  width: 150px;*/
+  display: inline-block;
   width: 150px;
+  margin: 0px 10px;
+  position:relative;
+}
+
+.scroll {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  /*float: left;*/
+  width: 5px;
+  padding: 0px;
+  margin: auto;
+}
+
+.graph-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
 }
 
 .forecast-header {
@@ -43,10 +123,11 @@
 .CityForecastWeatherItem {
   margin-left: 5%;
   margin-right: 5%;
+  font-size: 120%;
 }
 
 .custom-tooltip {
-  background-color: #fcfcfd;
+  background-color: #fff;
   padding: 2px 10px;
   line-height: 8px;
   font-size: 14px;
@@ -56,13 +137,13 @@
 }
 
 .temp {
-  color: #3e4a69
+  color: #1995AD
 }
 
 .pressure {
-  color: #75869f
+  color: #A1D6E2
 }
 
 .clouds {
-  color: #bababa
+  color: #BCBABE
 }

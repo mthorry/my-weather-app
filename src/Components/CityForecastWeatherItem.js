@@ -5,7 +5,7 @@ const CityForecastWeatherItem = ({city}) => {
   return (
     <div className="CityForecastWeatherItem">
       <h3>{Math.round(city.main.temp)}˚F & {city.weather[0].main}</h3>
-      <img src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`} alt={city.weather[0].description} /><br/>
+      <img src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`} alt={city.weather[0].description} width="75px"/><br/>
       <p><strong>Currently:</strong> {city.weather[0].description}</p>
       <p><strong>High:</strong> {Math.round(city.main.temp_max)}˚F</p>
       <p><strong>Low:</strong> {Math.round(city.main.temp_min)}˚F</p>

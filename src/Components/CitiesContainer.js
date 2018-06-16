@@ -25,11 +25,13 @@ class CitiesContainer extends Component {
     return (
       <div className="CitiesContainer">
         <h1>Current Weather</h1>
+        <p>Click a city for more details or add another city by name</p>
         <div className='search'>
             { this.props.loading ? null : <form
               onSubmit={this.handleSubmit}
               >
               <input
+              className="textbox"
               type="text"
               name="name"
               value={this.state.searchValue}
@@ -37,6 +39,7 @@ class CitiesContainer extends Component {
               placeholder="Search for city by name"
               />
               <input
+              className="button"
               type="submit"
               value="Add City"
               />

@@ -70,7 +70,7 @@ class CityForecastsContainer extends Component {
 
     return (
       <div className="CityForecastsContainer">
-        <h2>{city.name} Weather </h2>
+        <h1>{city.name} Weather </h1>
         <br/>
       { loading ? <div>LOADING</div> : <div>
         <div className='forecast-header'>
@@ -79,9 +79,10 @@ class CityForecastsContainer extends Component {
         </div>
         <br/>
         <Link to='/home'>Back</Link>
-        <div className='forecast-container'>
+        <h1>5 Day Forecast</h1>
+        <p>(Scroll through hourly forecast + hover over graph to see details)</p>
           {this.state.city.name ? this.renderForecastItem() : null}
-        </div></div> }
+        </div> }
       </div>
     );
   }

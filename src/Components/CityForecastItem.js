@@ -29,40 +29,44 @@ const CityForecastItem = ({forecasts, timeModifier}) => {
 	return (
 	  <div className="CityForecastItem">
 	    <h2>{forecastDate ? `June ${forecastDate.getDate()}` : null}</h2>
+      <div className='carousel-container'>
 	    <div className='forecast-container'>
-	    	{renderHourlyForecasts()}        		
+	    	{renderHourlyForecasts()}
+      </div>
+      </div>
+      <div className='graph-container'>
 	    	{ forecasts.length > 2 ? <ComposedChart width={600} height={300} data={data}>
 				<XAxis dataKey="time"/>
-		        <YAxis 
-		        	yAxisId="left" 
+		        <YAxis
+		        	yAxisId="left"
 		        	label={{ value: 'temp (˚F) / clouds (%)', angle: -90, position: 'insideBottomLeft' }}
 		        />
-		        <YAxis 
-		        	yAxisId="right" 
-		        	orientation="right" 
-		        	domain={[990, 1040]} 
+		        <YAxis
+		        	yAxisId="right"
+		        	orientation="right"
+		        	domain={[1000, 1040]}
 		        	label={{ value: 'pressure (millibars)', angle: 90, position: 'insideBottomRight' }}
 		        />
 				<Tooltip content={<CustomTooltip/>} />
 				<Legend />
-				<Line 
-					type="monotone" 
-					dataKey="temp" 
-					yAxisId="left" 
-					stroke="#3e4a69" 
+				<Line
+					type="monotone"
+					dataKey="temp"
+					yAxisId="left"
+					stroke="#1995AD"
 				/>
-				<Line 
-					type="monotone" 
-					dataKey="pressure" 
-					yAxisId="right" 
-					stroke="#75869f"  
+				<Line
+					type="monotone"
+					dataKey="pressure"
+					yAxisId="right"
+					stroke="#A1D6E2"
 				/>
-				<Area 
-					type="monotone" 
-					dataKey="clouds" 
-					yAxisId="left" 
-					stroke="#bababa" 
-					fill="#e7eaee"
+				<Area
+					type="monotone"
+					dataKey="clouds"
+					yAxisId="left"
+					stroke="#BCBABE"
+					fill="#F2F2F3"
 				/>
 			</ComposedChart> : null }
 	    </div>

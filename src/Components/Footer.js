@@ -13,7 +13,7 @@ class Footer extends React.Component{
       <div className="footer-column">
         <h3>GitHub Repos</h3>
         <div >
-          <a href="https://github.com/mthorry/tv-lineup-app" className="item" target="_blank">This Project Repo</a><br/>
+          <a href="https://github.com/mthorry/my-weather-app" className="item" target="_blank">This Project Repo</a><br/>
           {' '}<br/>
           <a href="https://github.com/mthorry" className="item" target="_blank">My GitHub</a><br/>
         </div>

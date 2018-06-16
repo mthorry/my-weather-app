@@ -7,6 +7,20 @@ html {
   background: linear-gradient(to right, #ecf6f9, #f5fafc);
 }
 
+.App h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  line-height: 10px;
+}
+
+.App p, a {
+  font-family: 'Raleway', sans-serif;
+}
+
+.App strong {
+  font-weight: 600;
+}
+
 .cities-container {
   display: flex;
   flex-wrap: wrap;
@@ -62,12 +76,17 @@ html {
 
 .CityForecastsContainer a {
   text-decoration: none;
-  color: #383739;
   transition: .4s ease;
+  border: 1px solid #1995AD;
+  border-radius: 4px;
+  padding: 8px 20px;
+  background-color: #f5fafc;
+  color: #383739;
 }
 
 .CityForecastsContainer a:hover {
   color: #1995AD;
+  background-color: #F1F1F2;
 }
 
 .carousel-container {

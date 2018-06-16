@@ -36,7 +36,7 @@ class CitiesContainer extends Component {
               name="name"
               value={this.state.searchValue}
               onChange={this.handleChange}
-              placeholder="Search for city by name"
+              placeholder="Search for city by name, e.g. Honolulu"
               />
               <input
               className="button"
